@@ -4,10 +4,14 @@
 // https://github.com/elderfo/react-native-storybook-loader.git
 
 function loadStories() {
-  require('../src/components/SokosText.stories');
+  require('../src/components/CalendarPicker.stories');
+  require('../src/components/CustomText.stories');
 }
 
-const stories = ['../src/components/SokosText.stories'];
+const stories = [
+  '../src/components/CalendarPicker.stories',
+  '../src/components/CustomText.stories',
+];
 
 module.exports = {
   loadStories,
