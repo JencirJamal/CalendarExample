@@ -3,20 +3,20 @@ import React, { useState } from "react";
 import { View, StyleSheet } from "react-native";
 import { Calendar } from "react-native-calendars";
 
-function CalendarPicker({ onSaveDate, onCancelDate }) {
+function CalendarPicker() {
   const [selectedDate, setSelectedDate] = useState(null);
   return (
     <View style={styles.container}>
       <Calendar
         onDayPress={(day) => {
           console.log("selected day", day);
-          setSelectedDate(day);
+          setSelectedDate(day.dateString);
         }}
-        // Handler which gets executed on day long press. Default = undefined
+
         onDayLongPress={(day) => {
           console.log("selected day", day);
         }}
-        
+
         onMonthChange={(month) => {
           console.log("month changed", month);
         }}
@@ -28,17 +28,20 @@ function CalendarPicker({ onSaveDate, onCancelDate }) {
         firstDay={1}
 
         showWeekNumbers={false}
-        // Handler which gets executed when press arrow icon left. It receive a callback can go back month
+
         onPressArrowLeft={(subtractMonth) => subtractMonth()}
-        // Handler which gets executed when press arrow icon right. It receive a callback can go next month
+        
         onPressArrowRight={(addMonth) => addMonth()}
-        // Disable left arrow. Default = false
+        
         disableArrowLeft={false}
-        // Disable right arrow. Default = false
+        
         disableArrowRight={false}
-        // Disable all touch events for disabled days. can be override with disableTouchEvent in markedDates
+        
         disableAllTouchEventsForDisabledDays={true}
         enableSwipeMonths={true}
+        markedDates={{
+          [selectedDate]: {selected: true, marked: true, selectedColor: 'green'},
+        }}
       />
     </View>
   );
