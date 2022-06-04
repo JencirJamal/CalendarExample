@@ -13,8 +13,18 @@ After react-native environment setup is done
 - run command 'yarn run storybook'. It will give you the following screen: 
 ![Alt text](./screenshot_1.png?raw=true "StoryBook")
 - The left menubar in that browser page will be seen as loading until you launch the app in iOS/Android simulators
+
+## Run in iOS Simulator
 - run 'yarn ios' command to run the code in iOS simulator
+- if above command throw some error related to Xcodebuild, the follow below steps for fixing it
+- Navigate to ios folder in the project with command 'cd ios'
+- run command 'pod install' - this will install native iOS dependencies for the project
+- Now re-run command 'yarn ios' - xcodebuild should succeed and the code will now run in ios simulator
+- Screen Shot from iOS simulator attached below
 ![Alt text](./storybook_menu_ios.png?raw=true "Stories Menu")
 ![Alt text](./story_book_calendar_picker_ios.png?raw=true "Calendar Picker Story")
-- run 'yarn android' command to run the code in Android emulator
+
+## Run in Android Emulator
+- Open/start any Android emulator using Android Studio
+- run 'yarn android' command at the root folder of the project to run the code in Android emulator
 
