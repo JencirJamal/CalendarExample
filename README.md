@@ -1,4 +1,4 @@
-# SokosHotelsApp
+# CalendarExample
 This is react-native application (react-native cli) that uses story book for creating custom components that can be re-used across your different react-native projects
 
 ## Prerequisite
